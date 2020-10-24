@@ -2,8 +2,12 @@
   <article>
       <h1> {{ movie.title }} </h1>
       <dl>
-          
-
+        <dt>Director :</dt>
+        <dd> {{movie.director}} </dd>
+        <dt>Release: </dt>
+        <dd>{{ movie.release_date}} </dd>
+        <dt>Description :</dt>
+        <dd>{{ movie.description }}</dd>
 
       </dl>
   </article>
