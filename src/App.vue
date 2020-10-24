@@ -34,9 +34,12 @@ export default {
   methods: {
     
     getMovies : function() {
-      const promises = 
+      const promises = [1].map(num => {
+        return fetch('https://ghibliapi.herokuapp.com/films')
+          .then(response => response.json());
+          // .then(movies => this.movies = movies);
+      });
 
-    },
 
     Promise.all(promises)
       .then(movies => {
@@ -46,7 +49,9 @@ export default {
         );
         movieData.forEach(movie => (movie.isFavourite = false));
         this.movies = movieData;
-      })
+      });
+    },
+
     markFavourite : function(movie) {
       const index = this.movies.indexOf(movie);
       this.movies[index].isFavourite = true;
@@ -66,9 +71,10 @@ export default {
     }
   },
   mounted() {
-    fetch('https://ghibliapi.herokuapp.com/films')
-    .then(response => response.json())
-    .then(movies => this.movies = movies);
+    // fetch('https://ghibliapi.herokuapp.com/films')
+    // .then(response => response.json())
+    // .then(movies => this.movies = movies);
+    this.getMovies();
 
     fetch('https://ghibliapi.herokuapp.com/people')
     .then(response => response.json())
@@ -77,6 +83,8 @@ export default {
     eventBus.$on('movie-selected', (movie) => {
         this.selectedMovie = movie;
     });
+
+    eventBus.$on('favourite-added', (movie) => this.markFavourite(movie));
 
   },
 

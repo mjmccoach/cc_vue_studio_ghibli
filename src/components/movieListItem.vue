@@ -3,7 +3,6 @@
     
     <span> {{ movie.title }} </span> ,
     <span> {{ movie.release_date}} </span>
-      
   </li>
 </template>
 

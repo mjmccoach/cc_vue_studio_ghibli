@@ -12,6 +12,8 @@
 
             </dl>
 
+            <!-- <button v-if="!beer.isFavourite" v-on:click="addFavourite"></button> -->
+
       </div>
 
       <!-- <div class='characters'>
