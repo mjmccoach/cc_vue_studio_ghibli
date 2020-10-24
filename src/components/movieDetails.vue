@@ -14,12 +14,16 @@
 
       </div>
 
-      <div class='characters'>
-          <h2>Movie characters</h2>
+      <!-- <div class='characters'>
+          <h2> {{ movie.title }}'s characters: </h2>
           <ul>
-              <li></li>
+              <li
+              v-for="(people,index) in movie.people"
+              :key="index">
+             {{ people.name }}
+             </li>
           </ul>
-      </div>
+      </div> -->
   </article>
 </template>
 
