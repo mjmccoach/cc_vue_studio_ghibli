@@ -22,7 +22,9 @@ export default {
     .then(response => response.json())
     .then(movies => this.movies = movies);
 
-    eventBus.$on('movie-selected', movie)
+    eventBus.$on('movie-selected', (movie) => {
+        this.selectedMovie = movie;
+    });
 
   },
   components: {
