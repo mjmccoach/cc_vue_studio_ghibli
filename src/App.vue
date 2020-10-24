@@ -1,6 +1,7 @@
 <template>
   <main>
     <movie-list :movies='movies'></movie-list>
+    <movie-detail v-if="selectedMovie" :movie='selectedMovie'></movie-detail>
 
   </main>
 </template>
@@ -8,6 +9,7 @@
 <script>
 import movieList from '@/components/movieList'
 import movieListItem from '@/components/movieListItem'
+import movieDetail from '@/components/movieDetails'
 import { eventBus } from '@/main.js'
 
 export default {
@@ -29,7 +31,8 @@ export default {
   },
   components: {
     movieList,
-    movieListItem
+    movieListItem,
+    movieDetail,
   },
 
 
@@ -37,11 +40,17 @@ export default {
 
 </script>
 
-<style>
+<style scoped>
 
+main {
+  display: grid;
+  height: 100vh;
+  grid-template-columns: 35fr 65fr;
+}
 ul {
   list-style-type: none;
   cursor: pointer;
 }
+
 
 </style>
