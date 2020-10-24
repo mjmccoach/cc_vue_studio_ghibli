@@ -16,6 +16,7 @@ export default {
   data() {
     return {
       movies : [],
+      characters: [],
       selectedMovie : null,
     };
   },
@@ -23,6 +24,10 @@ export default {
     fetch('https://ghibliapi.herokuapp.com/films')
     .then(response => response.json())
     .then(movies => this.movies = movies);
+
+    fetch('https://ghibliapi.herokuapp.com/people')
+    .then(response => response.json())
+    .then(characters => this.characters = characters);
 
     eventBus.$on('movie-selected', (movie) => {
         this.selectedMovie = movie;
@@ -46,6 +51,11 @@ main {
   display: grid;
   height: 100vh;
   grid-template-columns: 35fr 65fr;
+  background: url('https://i.redd.it/w6pf76e6p0v51.jpg') opacity 90%;
+  background-size: contain;
+  color: goldenrod;
+  text-emphasis-color: goldenrod;
+  text-shadow: black;
 }
 ul {
   list-style-type: none;

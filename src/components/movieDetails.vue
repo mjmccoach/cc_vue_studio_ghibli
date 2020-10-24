@@ -1,15 +1,25 @@
 <template>
   <article>
-      <h1> {{ movie.title }} </h1>
-      <dl>
-        <dt>Director :</dt>
-        <dd> {{movie.director}} </dd>
-        <dt>Release: </dt>
-        <dd>{{ movie.release_date}} </dd>
-        <dt>Description :</dt>
-        <dd>{{ movie.description }}</dd>
+      <div>
+            <h1> {{ movie.title }} </h1>
+            <dl>
+            <dt>Director :</dt>
+            <dd> {{movie.director}} </dd>
+            <dt>Release: </dt>
+            <dd>{{ movie.release_date}} </dd>
+            <dt>Description :</dt>
+            <dd>{{ movie.description }}</dd>
 
-      </dl>
+            </dl>
+
+      </div>
+
+      <div class='characters'>
+          <h2>Movie characters</h2>
+          <ul>
+              <li></li>
+          </ul>
+      </div>
   </article>
 </template>
 
