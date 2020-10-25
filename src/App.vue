@@ -2,7 +2,7 @@
   <main>
     <movie-list :movies='movies'></movie-list>
     <movie-detail v-if="selectedMovie" :movie='selectedMovie'></movie-detail>
-    <favourite-list></favourite-list>
+    <favourite-list :favourites="favourites"></favourite-list>
 
   </main>
 </template>

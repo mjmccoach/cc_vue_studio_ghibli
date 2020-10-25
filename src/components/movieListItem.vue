@@ -3,6 +3,7 @@
     
     <span> {{ movie.title }} </span> ,
     <span> {{ movie.release_date}} </span>
+    <button v-if="!movie.isFavourite" v-on:click="addFavourite">Add Favourite</button>
   </li>
 </template>
 
@@ -17,6 +18,11 @@ export default {
         handleClick: function (event) {
             eventBus.$emit("movie-selected", this.movie);   
         },
+
+        addFavourite: function (event) {
+            eventBus.$emit("favourite-added", this.movie)
+        }
+
     },
 
 }

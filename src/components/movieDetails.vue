@@ -12,8 +12,6 @@
 
             </dl>
 
-            <!-- <button v-if="!beer.isFavourite" v-on:click="addFavourite"></button> -->
-
       </div>
 
       <!-- <div class='characters'>
@@ -33,6 +31,11 @@
 export default {
     name :'movie-detail',
     props: ['movie'],
+    // methods: {
+    //     addFavourite: function() {
+    //         eventBus.$emit("favourite-added", this.movie);
+    //     }
+    // }
 };
 </script>
 
