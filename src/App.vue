@@ -85,6 +85,7 @@ export default {
     });
 
     eventBus.$on('favourite-added', (movie) => this.markFavourite(movie));
+    
 
   },
 

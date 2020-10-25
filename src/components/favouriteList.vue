@@ -1,9 +1,9 @@
 <template>
   <ul>
       <favourite-list-item
-      v-for="(movie,index) in favourites"
+      v-for="(favourite,index) in favourites"
       :key="index"
-      :movie="movie"
+      :favourite="favourite"
       >
           
       </favourite-list-item>
