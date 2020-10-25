@@ -3,7 +3,7 @@
       <favourite-list-item
       v-for="(favourite,index) in favourites"
       :key="index"
-      :favourite="favourite"
+      :movie="favourite"
       >
           
       </favourite-list-item>
@@ -24,5 +24,7 @@ export default {
 </script>
 
 <style>
-
+    ul {
+        display:grid;
+    }
 </style>

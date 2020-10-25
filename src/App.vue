@@ -1,8 +1,9 @@
 <template>
-  <main>
+  
+  <main>    
     <movie-list :movies='movies'></movie-list>
     <movie-detail v-if="selectedMovie" :movie='selectedMovie'></movie-detail>
-    <favourite-list :favourites="favourites"></favourite-list>
+    <favourite-list class='favourite-list' :favourites="favourites"></favourite-list>
 
   </main>
 </template>
@@ -85,7 +86,9 @@ export default {
     });
 
     eventBus.$on('favourite-added', (movie) => this.markFavourite(movie));
-    
+
+    eventBus.$on('favourite-removed', (movie) => this.unmarkFavourite(movie));
+
 
   },
 
@@ -100,15 +103,17 @@ main {
   display: grid;
   height: 100vh;
   grid-template-columns: 35fr 65fr;
-  background: url('https://i.redd.it/w6pf76e6p0v51.jpg') opacity 90%;
-  background-size: contain;
-  color: goldenrod;
+  background: url('https://studioghiblimovies.com/wp-content/uploads/2020/03/barcode-scanners-qr-code-2d-code-creative-barcode.jpg');
+  background-size:cover;
+  color: whitesmoke;
   text-emphasis-color: goldenrod;
   text-shadow: black;
+  font-family: 'Roboto', sans-serif;
 }
 ul {
   list-style-type: none;
   cursor: pointer;
+  margin-right: 10px;
 }
 
 

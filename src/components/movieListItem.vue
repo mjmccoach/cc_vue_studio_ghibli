@@ -3,7 +3,7 @@
     
     <span> {{ movie.title }} </span> ,
     <span> {{ movie.release_date}} </span>
-    <button v-if="!movie.isFavourite" v-on:click="addFavourite">Add Favourite</button>
+    <button class="add-button" v-if="!movie.isFavourite" v-on:click="addFavourite">Add Favourite</button>
   </li>
 </template>
 
@@ -30,4 +30,8 @@ export default {
 
 <style>
 
+  #add-button:hover {
+    background-color: green;
+    cursor: pointer;
+  }
 </style>
